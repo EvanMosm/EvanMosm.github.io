@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Developer: Evan Mosmiller 
+        	Start Date:  04/12/2024 -->
+        <title>Fast-Food Nutritional Resource</title>
+		<link rel="stylesheet" type="text/css" href="css/my_styles.css" media="screen, print" />
+		<link rel="stylesheet" type="text/css" href="css/full_screen.css" media="screen and (min-width:769px)" />
+		<link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (max-width:768px) and (min-width:481px)" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width:480px)" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+		<header>
+			<h1>
+    			WELCOME to the Fast Food Nutritional Resource!
+    		</h1>
+			<input class="menu-chkbx" type="checkbox" id="menu-chkbx" />
+  			<label class="menu-burger" for="menu-chkbx">
+    			<span class="hamburger"></span>
+  			</label>
+			<nav class='menu'>
+				<ul>
+					<li>
+						<a href="index.html">Home Page</a>
+					</li>
+					<li>
+						<a href="menu_info.html">Menu Information</a>
+					</li>
+					<li>
+						<a href="franchises.html">Franchises</a>
+					</li>
+					<li>
+						<a href="calculator.html">Calorie Calculator</a>
+					</li>
+					<li>
+						<a href="health_tips.html">Health Tips</a>
+					</li>
+					<li>
+						<a href="contact_us.html">Contact Us</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div id="calorie-calculator">
+			<h2>Calorie Calculator</h2>
+			<form id="calorie-form">
+				<label for="food-item">Food Item:</label>
+				<input type="text" id="food-item" name="food-item" required>
+	
+				<label for="calories">Calories per Serving:</label>
+				<input type="number" id="calories" name="calories" required>
+	
+				<label for="servings">Number of Servings:</label>
+				<input type="number" id="servings" name="servings" required>
+	
+				<button type="button" onclick="addItem()">Add Item</button>
+			</form>
+			<ul id="items-list"></ul>
+			<div>Total Calories: <span id="calories-result">0</span></div>
+			<button type="button" onclick="clearItems()">Clear All</button>
+
+		<!-- Uses Mifflin-St Jeor Equation -->
+		<h2>Daily Caloric Needs Calculator</h2>
+		<p><strong>Disclaimer:</strong> The following calculations assume a sedentary lifestyle and are intended to estimate daily calorie needs for maintaining current weight.</p>
+		<p>Please adjust your calorie intake if your lifestyle is more or less active.</p>
+        <form id="caloric-needs-form">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="weight">Weight (lbs):</label>
+            <input type="number" id="weight" name="weight" required>
+
+            <label for="height">Height:</label>
+            <input type="number" id="height-feet" name="height-feet" placeholder="Feet" required>
+            <input type="number" id="height-inches" name="height-inches" placeholder="Inches">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+				<option value="other">Other</option>
+            </select>
+
+            <button type="button" onclick="calculateCaloricNeeds()">Calculate</button>
+        </form>
+        <div id="suggested-calories">
+            Suggested Daily Calories: <span id="calories-needed">0</span>
+        </div>
+	</div>
+
+		<footer>
+			Copyright &copy; 2024 
+		</footer>
+    </body>
+	
+	<script>
+		let totalCalories = 0;
+		function addItem() {
+			const foodItem = document.getElementById('food-item').value;
+			const calories = parseInt(document.getElementById('calories').value, 10);
+			const servings = parseInt(document.getElementById('servings').value, 10);
+		
+			const itemCalories = calories * servings;
+			totalCalories += itemCalories;
+		
+			const itemText = `${foodItem}: ${itemCalories} calories`;
+			const listItem = document.createElement('li');
+			listItem.textContent = itemText;
+			document.getElementById('items-list').appendChild(listItem);
+		
+			document.getElementById('calories-result').textContent = totalCalories;
+		
+			// Clear inputs
+			document.getElementById('food-item').value = '';
+			document.getElementById('calories').value = '';
+			document.getElementById('servings').value = '';
+		}
+		
+		function clearItems() {
+			totalCalories = 0;
+			document.getElementById('items-list').innerHTML = '';
+			document.getElementById('calories-result').textContent = '0';
+		}
+
+		function calculateCaloricNeeds() {
+			const age = parseInt(document.getElementById('age').value, 10);
+			const weight = parseFloat(document.getElementById('weight').value) * 0.453592; // Convert lbs to kg directly here
+			const feet = parseInt(document.getElementById('height-feet').value, 10) || 0;
+			const inches = parseInt(document.getElementById('height-inches').value, 10) || 0;
+			const height = (feet * 12 + inches) * 2.54; // Convert total inches to cm
+			const gender = document.getElementById('gender').value;
+
+			let caloriesNeeded;
+			if (gender === 'male') {
+				caloriesNeeded = (10 * weight + 6.25 * height - 5 * age + 5) * 1.2;
+			} else {
+				caloriesNeeded = (10 * weight + 6.25 * height - 5 * age - 161) * 1.2;
+			}
+
+			document.getElementById('calories-needed').textContent = Math.round(caloriesNeeded);
+		}
+		
+		</script>
+
+	
+</html>
