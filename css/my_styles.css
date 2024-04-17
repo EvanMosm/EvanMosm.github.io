@@ -266,3 +266,51 @@ article h2 {
     padding: 10px;
     border-left: 4px solid #009688;
 }
+
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+    width: 100%; /* Ensures full width for smaller devices */
+    padding: 8px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.form
+
+article img {
+    height: 50px; /* Adjust size as needed */
+    float: left;
+    margin-right: 10px; /* Provides spacing between the icon and the text */
+}
+
+article {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Adds a subtle line between articles */
+}
+
+article a {
+    color: #007BFF; /* A bright blue for links, ensuring they stand out */
+    text-decoration: none; /* Removes underline */
+}
+
+article a:hover {
+    text-decoration: underline; /* Adds underline on hover for better interaction feedback */
+}
