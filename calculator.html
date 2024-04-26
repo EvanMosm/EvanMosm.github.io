@@ -6,21 +6,21 @@
         <!-- Developer: Evan Mosmiller 
         	Start Date:  04/12/2024 -->
         <title>Fast-Food Nutritional Resource</title>
-		<link rel="stylesheet" type="text/css" href="css/my_styles.css" media="screen, print" />
-		<link rel="stylesheet" type="text/css" href="css/full_screen.css" media="screen and (min-width:769px)" />
-		<link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (max-width:768px) and (min-width:481px)" />
-		<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width:480px)" />
-		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" /> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="css/my_styles.css" media="screen, print" >
+		<link rel="stylesheet" type="text/css" href="css/full_screen.css" media="screen and (min-width:769px)" >
+		<link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (max-width:768px) and (min-width:481px)" >
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width:480px)" >
+		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" > 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Luckiest Guy&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     </head>
     <body>
 		<header>
 			<h1>
     			<a href="index.html" style="text-decoration: none; color: inherit;">The Fast Food Nutritional Resource</a>
     		</h1>
-			<input class="menu-chkbx" type="checkbox" id="menu-chkbx" />
+			<input class="menu-chkbx" type="checkbox" id="menu-chkbx" >
   			<label class="menu-burger" for="menu-chkbx">
     			<span class="hamburger"></span>
   			</label>
@@ -83,7 +83,7 @@
             <label for="weight">Weight (lbs):</label>
             <input type="number" id="weight" name="weight" required>
 
-            <label for="height">Height:</label>
+            <label for="height-feet">Height:</label>
             <input type="number" id="height-feet" name="height-feet" placeholder="Feet" required>
             <input type="number" id="height-inches" name="height-inches" placeholder="Inches">
 
@@ -135,56 +135,56 @@
 			});
 		</script>
 
-    </body>
-	
-	<script>
-		let totalCalories = 0;
-		function addItem() {
-			const foodItem = document.getElementById('food-item').value;
-			const calories = parseInt(document.getElementById('calories').value, 10);
-			const servings = parseInt(document.getElementById('servings').value, 10);
-		
-			const itemCalories = calories * servings;
-			totalCalories += itemCalories;
-		
-			const itemText = `${foodItem}: ${itemCalories} calories`;
-			const listItem = document.createElement('li');
-			listItem.textContent = itemText;
-			document.getElementById('items-list').appendChild(listItem);
-		
-			document.getElementById('calories-result').textContent = totalCalories;
-		
-			// Clear inputs
-			document.getElementById('food-item').value = '';
-			document.getElementById('calories').value = '';
-			document.getElementById('servings').value = '';
-		}
-		
-		function clearItems() {
-			totalCalories = 0;
-			document.getElementById('items-list').innerHTML = '';
-			document.getElementById('calories-result').textContent = '0';
-		}
-
-		function calculateCaloricNeeds() {
-			const age = parseInt(document.getElementById('age').value, 10);
-			const weight = parseFloat(document.getElementById('weight').value) * 0.453592; // Convert lbs to kg directly here
-			const feet = parseInt(document.getElementById('height-feet').value, 10) || 0;
-			const inches = parseInt(document.getElementById('height-inches').value, 10) || 0;
-			const height = (feet * 12 + inches) * 2.54; // Convert total inches to cm
-			const gender = document.getElementById('gender').value;
-
-			let caloriesNeeded;
-			if (gender === 'male') {
-				caloriesNeeded = (10 * weight + 6.25 * height - 5 * age + 5) * 1.2;
-			} else {
-				caloriesNeeded = (10 * weight + 6.25 * height - 5 * age - 161) * 1.2;
+		<script>
+			let totalCalories = 0;
+			function addItem() {
+				const foodItem = document.getElementById('food-item').value;
+				const calories = parseInt(document.getElementById('calories').value, 10);
+				const servings = parseInt(document.getElementById('servings').value, 10);
+			
+				const itemCalories = calories * servings;
+				totalCalories += itemCalories;
+			
+				const itemText = `${foodItem}: ${itemCalories} calories`;
+				const listItem = document.createElement('li');
+				listItem.textContent = itemText;
+				document.getElementById('items-list').appendChild(listItem);
+			
+				document.getElementById('calories-result').textContent = totalCalories;
+			
+				// Clear inputs
+				document.getElementById('food-item').value = '';
+				document.getElementById('calories').value = '';
+				document.getElementById('servings').value = '';
+			}
+			
+			function clearItems() {
+				totalCalories = 0;
+				document.getElementById('items-list').innerHTML = '';
+				document.getElementById('calories-result').textContent = '0';
 			}
 
-			document.getElementById('calories-needed').textContent = Math.round(caloriesNeeded);
-		}
-		
-	</script>
+			function calculateCaloricNeeds() {
+				const age = parseInt(document.getElementById('age').value, 10);
+				const weight = parseFloat(document.getElementById('weight').value) * 0.453592; // Convert lbs to kg directly here
+				const feet = parseInt(document.getElementById('height-feet').value, 10) || 0;
+				const inches = parseInt(document.getElementById('height-inches').value, 10) || 0;
+				const height = (feet * 12 + inches) * 2.54; // Convert total inches to cm
+				const gender = document.getElementById('gender').value;
 
+				let caloriesNeeded;
+				if (gender === 'male') {
+					caloriesNeeded = (10 * weight + 6.25 * height - 5 * age + 5) * 1.2;
+				} else {
+					caloriesNeeded = (10 * weight + 6.25 * height - 5 * age - 161) * 1.2;
+				}
+
+				document.getElementById('calories-needed').textContent = Math.round(caloriesNeeded);
+			}
+			
+		</script>
+
+
+    </body>
 	
 </html>
