@@ -41,7 +41,7 @@
 					<li>
 						<a href="health_tips.html">Health Tips</a>
 					</li>
-					<li>
+                    <li>
 						<a href="about_us.html">About Us</a>
 					</li>
 					<li>
@@ -50,78 +50,32 @@
 				</ul>
 			</nav>
 		</header>
-		
-		<div class="centered-content">
-			<h3>Contact Us!</h3>
-			<!-- Used FormSpree for email -->
-			<form action="https://formspree.io/f/mdoqyrzo" method="POST">
-				<label for="name">Your Name:</label>
-				<input type="text" id="name" name="name" required>
-				
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="_replyto" required>
-				
-				<label for="phone">Phone (Optional):</label>
-				<input type="tel" id="phone" name="phone">
-				
-				<label for="contact-preference">Preferred Contact Method:</label>
-				<select id="contact-preference" name="contact-preference">
-					<option value="email">Email</option>
-					<option value="phone">Phone</option>
-				</select>
-				
-				<label for="reason">Reason for Contact:</label>
-				<select id="reason" name="reason">
-					<option value="feedback">Feedback</option>
-					<option value="complaint">Complaint</option>
-					<option value="inquiry">General Inquiry</option>
-					<option value="support">Support Request</option>
-				</select>
-			
-				<label for="message">Message:</label>
-				<textarea id="message" name="message" rows="4" required></textarea>
-				
-				<button type="submit">Send Message</button>
-			</form>
-		</div>
 
-		
-		<!-- GITHUB doesn't support php, here's the code however if needed in the future
-		<?php
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			$name = strip_tags(trim($_POST["name"]));
-			$email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-			$message = trim($_POST["message"]);
-			$reason = trim($_POST["reason"]);
-			
-			// Set the recipient email address.
-			// IMPORTANT: This should be your email address or one you have control over.
-			$to = '?'; 
+        <main>
+            <section class="about-section">
+                <h2>Our Mission</h2>
+                <p>
+                    At the Fast Food Nutritional Resource, our mission is to empower individuals to make informed dietary choices when enjoying fast food. We believe that understanding the nutritional content of fast food can lead to better health outcomes and a more enjoyable eating experience.
+                </p>
+            </section>
+            <section class="about-section">
+                <h2>Our Vision</h2>
+                <p>
+                    We envision a world where everyone has the information they need to make healthier choices, even when it's a quick meal on the go. We aim to provide comprehensive, accessible, and up-to-date nutritional information for fast food lovers everywhere.
+                </p>
+            </section>
+            <section class="about-section team-container">
+                <h2>Meet the Team</h2>
+                <img src="images/mugshot.png" alt="Team Leader Photo" class="team-photo">
+                <div class="team-description">
+                <p>
+                    Hello! My name's Evan Mosmiller and I created this website. I created this site as a school project for my Software Development class during my Senior year of college. Why did I choose to make a website focusing on fast food? Well, food is something we all put a great emphasis on, and is a necessary part of life, you need to eat. Finding and eating a meal meant life and death survival for our ancestors. However, today we don't go out and hunt for a meal, we now work to gain money to buy one. But there's so many options. Today, there's 100's of fast food chains nationwide giving the average person more than enough options where as they can be "picky" with what they want to eat. Knowing what is in your food and its nutritional information is important however for people who want to maintain a healthy lifestyle. I think websites like mine are important, as I too in actuality eat a lot of fast food and have over my lifetime and I feel like many other people have too. It's just too convienent, but not necessarily healthy. I would say I'm knowledgeable and experienced in the current North American lifestyle of "eating-out", and know of if not tried most menu items of a large variety of fast-food chains. At the time of making this website I've worked in the food and dining industry for 5+ years. So I feel making a website about food by combining my experience in various restaraunts and my studies at school, is somewhat surreal but honestly perfect at the same time. I want to say thank you for visiting my site! Also try to eat healthy, I know it's hard but this is what this site was made for, to help. Cheers!
+                </p>
+                </div>
+            </section>
+        </main>
 
-			// Set the email subject.
-			$subject = "New contact from $name";
-
-			// Build the email content.
-			$email_content = "Name: $name\n";
-			$email_content .= "Email: $email\n";
-			$email_content .= "Reason: $reason\n";
-			$email_content .= "Message:\n$message\n";
-
-			// Build the email headers.
-			$email_headers = "From: $name <$email>";
-
-			// Send the email.
-			if (mail($to, $subject, $email_content, $email_headers)) {
-				echo 'Thank you for your message!';
-			} else {
-				echo 'Oops! Something went wrong and we couldn't send your message.';
-			}
-		}
-		?>
-		-->
-
-		
-		<footer>
+        <footer>
 			Copyright &copy; 2024 
 		</footer>
 

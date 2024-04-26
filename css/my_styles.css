@@ -279,8 +279,8 @@ input[type="text"], input[type="email"], input[type="tel"], select, textarea {
 
 button[type="submit"] {
     width: 100%;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #51fa3b;
+    color: rgb(254, 252, 252);
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -289,7 +289,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #51fa3b;
 }
 
 .form
@@ -313,4 +313,326 @@ article a {
 
 article a:hover {
     text-decoration: underline; /* Adds underline on hover for better interaction feedback */
+}
+
+.team-photo {
+    width:200px
+}
+
+.team-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: start; /* Align content to the start of the flex container */
+    gap: 20px; /* Spacing between the image and the text */
+}
+
+.team-photo {
+    width: 250px; /* Adjust width as necessary */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: makes the photo circular */
+}
+
+.team-description {
+    flex: 1; /* Takes up the remaining space */
+}
+
+.section-divider {
+    border: 0;
+    height: 2px;
+    background: #333; /* Dark grey line */
+    margin: 20px 0; /* Adds spacing above and below the divider */
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between; /* Ensure elements are spaced out */
+    align-items: start; /* Align items at the top */
+    padding: 20px;
+}
+
+.text-section {
+    flex: 1 0 50%; /* Flex-grow, flex-shrink, flex-basis at 50% of the parent */
+    background-color: #fff; /* Sets background color to white */
+    padding: 20px; /* Adds space inside the box */
+    border-radius: 15px; /* Rounds the corners of the box */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow around the box */
+    font-family: 'Roboto', sans-serif; /* Uses Roboto font */
+    text-indent: 20px; /* Indents the first line of each paragraph */
+    margin-right: 20px; /* Adds spacing between this section and the image grid */
+    max-width: 50%; /* Ensures it doesn't grow beyond 50% */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns, each taking 1 fraction of the space */
+    grid-gap: 10px; /* Space between images */
+    flex: 1 0 50%; /* Flex-grow, flex-shrink, flex-basis at 50% of the parent */
+    max-width: 50%; /* Maximum width */
+}
+
+.four-square {
+    width: 100%; /* Images take full width of the grid column */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.image-grid a img {
+    width: 100%; /* Makes images fill their containers */
+    height: auto; /* Keeps image aspect ratio */
+    border-radius: 5px; /* Optional: rounds corners of images */
+}
+
+.text-section {
+    flex: 1 1 50%; /* Adjusts the box size relative to its container */
+    background-color: #fff; /* Sets background color to white */
+    padding: 20px; /* Adds space inside the box */
+    border-radius: 15px; /* Rounds the corners of the box */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow around the box */
+    font-family: 'Roboto', sans-serif; /* Uses Roboto font */
+    text-indent: 20px; /* Indents the first line of each paragraph */
+    margin-right: 20px; /* Adds spacing between this section and the image grid */
+}
+
+/* Add this to ensure the whole paragraph is indented if desired */
+.text-section p {
+    text-indent: 20px;
+}
+
+/* Adjust the position of the menu to appear directly under the hamburger icon */
+.menu {
+    display: none; /* Keep the menu hidden by default */
+    position: absolute;
+    top: 60px; /* Adjust this value based on the actual height of your header or hamburger icon */
+    right: 0; /* Keeps the menu aligned to the right, under the hamburger icon */
+    background-color: white; /* Background color of the menu */
+    width: 200px; /* Adjust the width as necessary */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Optional shadow for better visibility */
+    z-index: 1000; /* Ensures the menu is above other content */
+}
+
+/* Additional styling for list and links */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black; /* Adjust color as needed */
+    border-bottom: 1px solid #ddd; /* Separator between items */
+}
+
+.menu li a:hover {
+    background-color: #f5f5f5; /* Hover effect for links */
+}
+
+header h1 {
+    font-family: 'Luckiest Guy', cursive; /* Applying the new font */
+    color: #fefe48; /* color */
+    text-align: center; /* Centering the title */
+    font-size: 5vw; /* Responsive font size based on viewport width */
+}
+
+header {
+    background-color: #fe4a4a; /* Sets the background color to red */
+    padding: 20px 0; /* Adjust padding as needed for your design */
+    text-align: center; /* Ensures content inside is centered */
+    width: 100%; /* Ensures the header extends full width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
+}
+
+body {
+    background-color: rgba(159, 154, 154, 0.653);
+    background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.4) 25%, transparent 25%, transparent 75%, rgba(255, 0, 0, 0.4) 75%),
+                      linear-gradient(45deg, rgba(255, 0, 0, 0.4) 25%, transparent 25%, transparent 75%, rgba(255, 0, 0, 0.4) 75%);
+    background-size: 60px 60px; /* Size of the checkers */
+    background-position: 0 0, 30px 30px; /* Positioning of the checkers */
+}
+
+/* Style for the "Contact Us!" heading */
+.centered-content h3 {
+    font-size: 36px; /* Increase font size */
+    color: #f9f8f8; /* Change color to a bold red or choose another prominent color */
+    text-shadow: 1px 1px 2px black; /* Optional: Adds shadow for better readability */
+}
+
+/* General styles for labels to increase readability */
+.centered-content label {
+    font-size: 18px; /* Larger font size for better visibility */
+    color: #ffffff; /* White color for better contrast on a busy background */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    padding: 5px; /* Adds some padding around the text */
+    border-radius: 5px; /* Optionally rounds the corners */
+    display: block; /* Makes each label and input appear on a new line */
+    margin-top: 10px; /* Adds space above each label for clearer separation */
+}
+
+/* Additional style to enhance form inputs and text area */
+.centered-content input, .centered-content select, .centered-content textarea {
+    width: 95%; /* Makes form inputs fill out the container */
+    padding: 10px; /* Adds padding inside the inputs for better readability */
+    border: 1px solid #ccc; /* Standard light grey border */
+    border-radius: 5px; /* Rounds the corners of the form inputs */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle inner shadow for depth */
+}
+
+/* General styling for all sections */
+section.about-section {
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Padding around the content */
+    margin: 20px auto; /* Centering the section with some margin around */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for a slight 3D effect */
+    border-radius: 8px; /* Rounded corners for a smoother look */
+    max-width: 800px; /* Restricts the maximum width for better readability */
+}
+
+/* Enhancing text readability */
+section.about-section h2, section.about-section p {
+    color: #333; /* Darker text color for better contrast */
+    margin-bottom: 10px; /* Adds space between elements */
+}
+
+/* Specific styling for the team section to handle images and longer texts */
+section.team-container {
+    padding: 20px;
+    background-color: #ffffff; /* Maintaining consistency with other sections */
+    display: flex; /* Using flexbox to layout image and text side by side */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+}
+
+.team-photo {
+    max-width: 200px; /* Limiting photo size */
+    margin-right: 20px; /* Space between photo and text */
+    border-radius: 50%; /* Circular image */
+}
+
+.team-description {
+    flex: 1; /* Takes up remaining space */
+    padding: 10px; /* Padding inside the description box */
+}
+
+footer {
+    text-align: center; /* Center aligns the footer content */
+    padding: 10px 0; /* Padding top and bottom */
+    background-color: #030303; /* Optional: Red background for the footer */
+    color: #ffffff; /* White text for the footer */
+}
+
+.team-description p {
+    text-indent: 35px; /* Indents the first line of the paragraph */
+}
+
+/* Basic reset for spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
+    line-height: 1.6; /* Spacing for readability */
+    color: #333; /* Dark grey for text */
+    background-color: #f4f4f4; /* Light grey background */
+}
+
+main {
+    max-width: 1200px; /* Maximum width of the content */
+    margin: 20px auto; /* Centering main in the middle of the screen */
+    padding: 20px; /* Padding around the content inside main */
+}
+
+article {
+    background-color: #fff; /* White background for articles */
+    margin-bottom: 20px; /* Space between articles */
+    padding: 20px; /* Padding inside articles */
+    border-left: 5px solid rgb(254, 254, 48); /* Red accent bar on the left */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    color: #030303; /* Red color for headings */
+    margin-bottom: 10px; /* Space after headings */
+}
+
+p {
+    margin-bottom: 10px; /* Space after paragraphs */
+}
+
+/* Styling for the centered title */
+.centered-title {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 1vh; /* Minimal top margin for aesthetics */
+    font-weight: bold;
+    color: #040404;
+}
+
+/* Modify the centered box to be at the top rather than centered in the viewport */
+.centered-box {
+    position: relative; /* Relative to its normal position */
+    top: 0; /* At the top of its container */
+    left: 0; /* Aligned to the left */
+    right: 0; /* Aligned to the right */
+    margin: 20px auto; /* Center horizontally with automatic side margins */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 80%; /* Width set to 80% of its parent */
+}
+
+/* Styling the link */
+.info-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+/* Collapsible sections styling */
+.collapsible {
+    background-color: #ffcc00;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+}
+.active, .collapsible:hover {
+    background-color: #f1c40f;
+}
+
+.content {
+    padding: 15px;
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+.construction-disclaimer {
+    background-color: #f6fa01;
+    border: 6px dashed #060606; /* black dashed border */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.construction-disclaimer p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.footer-tape {
+    background-repeat: repeat-x;
+    height: 20px; /* Adjust height as needed */
 }

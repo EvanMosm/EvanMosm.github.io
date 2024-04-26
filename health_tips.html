@@ -12,11 +12,13 @@
 		<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width:480px)" />
 		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" /> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Luckiest Guy&display=swap" rel="stylesheet">
     </head>
     <body>
 		<header>
 			<h1>
-    			WELCOME to the Fast Food Nutritional Resource!
+    			<a href="index.html" style="text-decoration: none; color: inherit;">The Fast Food Nutritional Resource</a>
     		</h1>
 			<input class="menu-chkbx" type="checkbox" id="menu-chkbx" />
   			<label class="menu-burger" for="menu-chkbx">
@@ -40,13 +42,34 @@
 						<a href="health_tips.html">Health Tips</a>
 					</li>
 					<li>
+						<a href="about_us.html">About Us</a>
+					</li>
+					<li>
 						<a href="contact_us.html">Contact Us</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
 		
+		<title>Nutritional Video</title>
+		<style>
+			.video-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh; /* This makes the container take the full height of the viewport */
+			}
+		</style>
+		<!-- Created with invideo AI with ChatGPT 4-->
+		<div class="video-container">
+			<video width="640" height="480" controls> 
+  				<source src="videos/invideo.mp4" type="video/mp4" /> 
+  				Your browser does not support the video tag. 
+			</video> 	
+		</div>>
+
 		<main>
+			<h7 class="centered-title"> Explore Health Tips Below!</h7>
 			<article>
 				<h2>Eat a Balanced Diet</h2>
 				<p>A balanced diet includes a variety of fruits, vegetables, lean proteins, whole grains, and healthy fats. Make sure to include a rainbow of food colors in your diet to benefit from a wide range of nutrients. Eating balanced meals helps maintain body weight, reduces the risk of chronic diseases, and fosters overall health.</p>
@@ -132,5 +155,36 @@
 		<footer>
 			Copyright &copy; 2024 
 		</footer>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				var menuCheckbox = document.getElementById('menu-chkbx'); // The checkbox used to toggle the menu
+				var menu = document.querySelector('.menu'); // The menu element
+			
+				menuCheckbox.addEventListener('change', function () {
+					if (menuCheckbox.checked) {
+						menu.style.display = 'block';
+						fadeIn(menu);
+					} else {
+						menu.style.display = 'none';
+					}
+				});
+			
+				function fadeIn(element) {
+					element.style.opacity = 0;
+					var last = +new Date();
+					var tick = function () {
+						element.style.opacity = +element.style.opacity + (new Date() - last) / 400;
+						last = +new Date();
+			
+						if (+element.style.opacity < 1) {
+							(window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+						}
+					};
+					tick();
+				}
+			});
+		</script>
+
     </body>
 </html>
